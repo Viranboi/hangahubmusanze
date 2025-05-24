@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submitted Answers</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .submission {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .submission h2 {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      padding: 5px;
+    }
+
+    .no-answers {
+      font-style: italic;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>All Submitted Answers</h1>
+
+  <% if (answers.length === 0) { %>
+    <p class="no-answers">No answers submitted yet.</p>
+  <% } else { %>
+    <% answers.forEach((set, index) => { %>
+      <div class="submission">
+        <h2>Submission <%= index + 1 %></h2>
+        <ul>
+          <% Object.entries(set).forEach(([question, answer]) => { %>
+            <li><strong><%= question %></strong>: <%= answer %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% }) %>
+  <% } %>
+</body>
+</html>

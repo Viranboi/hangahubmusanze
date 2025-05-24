@@ -1,0 +1,300 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://imgs.search.brave.com/cfVqP7tAvb3lVD3SPJnBg7QZap4HeIrNj_lN9LpLZng/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy80/LzRjL0ZsYWdfbWFw/X29mX1J3YW5kYS5z/dmc');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 40px 20px;
+    min-height: 100vh;
+    position: relative;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-size: 2.5em;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Centered Form Container */
+  form {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  form:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #222;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: inherit;
+    resize: vertical;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+  }
+  
+  button {
+    display: inline-block;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.2s ease;
+    user-select: none;
+  }
+  
+  button:hover {
+    background: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.5);
+  }
+  
+  button:active {
+    background: #004080;
+    box-shadow: none;
+  }
+  
+  /* Accessibility: Focus outline */
+  input[type="text"]:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #0056b3;
+    outline-offset: 2px;
+  }
+  
+  /* Answer Page Styling */
+  .submission {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .submission:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  }
+  
+  .submission h2 {
+    margin-top: 0;
+    color: #007BFF;
+    font-weight: 600;
+  }
+  
+  .submission ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .submission li {
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submission li:last-child {
+    border-bottom: none;
+  }
+  
+  .submission li:hover {
+    background-color: #f0f8ff;
+  }
+  
+  .no-answers {
+    text-align: center;
+    font-style: italic;
+    color: #eee;
+    margin-top: 40px;
+    font-size: 1.2em;
+  }
+  
+  /* Back Link Style */
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    color: #0056b3;
+    outline: none;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #ccc;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+  }
+  
+  /* Responsive Layout & Mobile Optimizations */
+  
+  /* Desktop and tablets (>= 769px) */
+  @media (min-width: 769px) {
+    body {
+      padding: 60px 80px;
+    }
+  
+    h1 {
+      font-size: 3em;
+    }
+  
+    form {
+      max-width: 700px;
+      padding: 40px 50px;
+    }
+  
+    input[type="text"],
+    textarea {
+      padding: 14px 16px;
+      font-size: 1.1em;
+    }
+  
+    button {
+      padding: 14px 28px;
+      font-size: 1.1em;
+    }
+  
+    /* Use multi-column layout for submission items */
+    .submission ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 40px;
+    }
+  
+    .submission li {
+      border-bottom: none;
+      padding-left: 0;
+    }
+  }
+  
+  /* Mobile phones and small devices (<= 768px) */
+  @media (max-width: 768px) {
+    body {
+      padding: 20px 15px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    form {
+      max-width: 100%;
+      padding: 25px 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    label {
+      font-size: 1.1em;
+    }
+  
+    input[type="text"],
+    textarea {
+      font-size: 1.15em;
+      padding: 14px;
+    }
+  
+    button {
+      width: 100%; /* full width button on mobile */
+      padding: 16px 0;
+      font-size: 1.15em;
+    }
+  
+    /* Stack submission items vertically */
+    .submission ul {
+      display: block;
+      padding-left: 15px;
+    }
+  
+    .submission li {
+      font-size: 1.1em;
+      margin-bottom: 14px;
+      padding: 8px 0;
+    }
+  }
+  
+  /* Extra small devices (<= 480px) */
+  @media (max-width: 480px) {
+    body {
+      padding: 15px 10px;
+    }
+  
+    h1 {
+      font-size: 1.6em;
+    }
+  
+    input[type="text"],
+    textarea {
+      padding: 16px;
+      font-size: 1.2em;
+    }
+  
+    button {
+      font-size: 1.2em;
+    }
+  }
+  
